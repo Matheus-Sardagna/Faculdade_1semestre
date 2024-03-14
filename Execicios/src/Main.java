@@ -3,19 +3,24 @@ import java.util.*;
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-//        ex3();
-//        ex4();
-//        ex5();
-//        ex6();
-//        ex7();
-//        ex8();
-//        ex9();
-//        ex10();
-//        ex11();
-//        ex12();
-//        ex14();
-//        ex15();
-//        ex16();
+        ex3();
+        ex4();
+        ex5();
+        ex6();
+        ex7();
+        ex8();
+        ex9();
+        ex10();
+        ex11();
+        ex12();
+        ex14();
+        ex15();
+        ex16();
+        ex17();
+        ex18();
+        ex19();
+        ex20();
+        ex21();
     }
     public static void ex3() {
         //3. Ler um número e verificar se ele é par ou ímpar
@@ -251,4 +256,106 @@ public class Main {
         // Mostra os números em ordem crescente
         System.out.println("Os números em ordem crescente são: " + ordem[0] + ", " + ordem[1] + ", " + ordem[2] + ", " + ordem[3]);
     }
+
+    public static void  ex17() {
+//        17. Ler uma temperatura em graus Celsius e apresenta-la convertida em graus Fahrenheit. A
+//        fórmula de conversão é: F = C∗(9.0/5.0)+32.0, sendo F a temperatura em Fahrenheit e C a
+//        temperatura em Celsius.
+        double fahrenheit;
+        double celcius;
+
+        System.out.println("Escreva a temperatura em celcius: ");
+        celcius = scanner.nextDouble();
+
+        fahrenheit = celcius * (9.0 / 5.0) + 32.0;
+
+        System.out.println("A temperatura em Celsius: " + celcius + "º" + "\nem  fahrenheit: " + fahrenheit + "º");
+
+    }
+    public static void ex18() {
+//        18. Ler um valor em real e a cotação do dólar. Em seguida, exibir o valor correspondente em
+//        dólares
+
+        double real;
+        double dolar;
+
+        System.out.println("Escreva o valor que queria converter em real para dolár: ");
+        real = scanner.nextDouble();
+
+        dolar = real * 4.97;
+
+        String formatDoisDigR = String.format("%.2f" ,real);
+        String formatDoisDigD = String.format("%.2f" ,dolar);
+        System.out.println("O valor de R$" + formatDoisDigR + " em dolár é: " + formatDoisDigD);
+
+//        real = Double.parseDouble(JOptionPane.showInputDialog(null,""));
+    }
+
+    public static void ex19() {
+//        19. Ler um número inteiro e exibir o seu antecessor e o seu sucessor.
+
+        int sucessor;
+        int antecessor;
+        int numero;
+
+        numero = Integer.parseInt(JOptionPane.showInputDialog(null,"Escreva o valor do número: "));
+        sucessor = numero + 1;
+        antecessor = numero - 1;
+
+        System.out.println("O número é: " + numero + "\nO antecessor é: " + antecessor + "\nO sucessor é: " + sucessor);
+    }
+    public static void ex20() {
+//        20. Usando switch-case, escrever um programa que lê um inteiro entre 1 e 7 e exibe o dia da
+//        semana correspondente a esse número. Isto é, domingo se 1, segunda-feira se 2, e assim por
+//        diante.
+
+        int dia;
+        dia = Integer.parseInt(JOptionPane.showInputDialog(null,"Escreva o dia da semana entre 1 e 7: "));
+//        System.out.println("Escolha o dia da semana de 1 a 7: ");
+//        dia = scanner.nextInt();
+
+        switch (dia) {
+            case 1:
+                System.out.println("Segunda-feira");
+                break;
+            case 2:
+                System.out.println("Terça-feira");
+                break;
+            case 3:
+                System.out.println("Quarta-feira");
+                break;
+            case 4:
+                System.out.println("Quinta-feira");
+                break;
+            case 5:
+                System.out.println("Sexta-feira");
+                break;
+            case 6:
+                System.out.println("Sábado");
+                break;
+            case 7:
+                System.out.println("Domingo");
+                break;
+        }
+
+    }
+
+    public static void ex21() {
+//        21. Sabe-se que um ano é bissexto se for divisível por 400 ou se for divisível por 4 e não for
+//        divisível por 100. Por exemplo: 1988, 1992, 1996, 2020. Determinarse um determinado ano lido
+//        é bissexto.
+
+        int ano;
+
+
+        ano = Integer.parseInt(JOptionPane.showInputDialog(null,"Qual ano você quer saber se é bissexto: "));
+        if (ano % 400  == 0 || ano % 4 == 0 && ano % 100 != 0) {
+            System.out.println("O ano é bissexto!! \nAno: " + ano);
+        }else {
+            System.out.println("O ano não é bissexto!! \nAno: " + ano);
+        }
+
+    }
+
 }
+
