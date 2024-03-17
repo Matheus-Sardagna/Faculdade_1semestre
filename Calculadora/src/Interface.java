@@ -25,7 +25,7 @@ public class Interface extends JFrame {
         jButton.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton.setForeground(new Color(0, 0, 0));
         jButton.setBackground(new Color(90, 90, 138));
-        jButton.setBounds(360,400,120,55);
+        jButton.setBounds(380,400,100,55);
 
         setLayout(null);
         JButton jButton2 = new JButton();
@@ -34,7 +34,7 @@ public class Interface extends JFrame {
         jButton2.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton2.setForeground(new Color(0, 0, 0));
         jButton2.setBackground(new Color(90, 90, 138));
-        jButton2.setBounds(360,220,120,55);
+        jButton2.setBounds(110,160,100,55);
 
         setLayout(null);
         JButton jButton3 = new JButton();
@@ -43,7 +43,7 @@ public class Interface extends JFrame {
         jButton3.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton3.setForeground(new Color(0, 0, 0));
         jButton3.setBackground(new Color(90, 90, 138));
-        jButton3.setBounds(4,160,120,55);
+        jButton3.setBounds(4,160,100,55);
 
         setLayout(null);
         JButton jButton4 = new JButton();
@@ -52,7 +52,7 @@ public class Interface extends JFrame {
         jButton4.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton4.setForeground(new Color(0, 0, 0));
         jButton4.setBackground(new Color(90, 90, 138));
-        jButton4.setBounds(360,340,120,55);
+        jButton4.setBounds(380,220,100,55);
 
         setLayout(null);
         JButton jButton5 = new JButton();
@@ -61,7 +61,7 @@ public class Interface extends JFrame {
         jButton5.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton5.setForeground(new Color(0, 0, 0));
         jButton5.setBackground(new Color(90, 90, 138));
-        jButton5.setBounds(360,160,120,55);
+        jButton5.setBounds(380,160,100,55);
 
         setLayout(null);
         JButton jButton6 = new JButton();
@@ -70,7 +70,7 @@ public class Interface extends JFrame {
         jButton6.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton6.setForeground(new Color(0, 0, 0));
         jButton6.setBackground(new Color(90, 90, 138));
-        jButton6.setBounds(360,280,120,55);
+        jButton6.setBounds(380,280,100,55);
 
         setLayout(null);
         JButton jButton7 = new JButton();
@@ -79,6 +79,15 @@ public class Interface extends JFrame {
         jButton7.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
         jButton7.setForeground(new Color(0, 0, 0));
         jButton7.setBackground(new Color(90, 90, 138));
-        jButton7.setBounds(360,400,120,55);
+        jButton7.setBounds(380,340,100,55);
+
+        setLayout(null);
+        JButton jButton8 = new JButton();
+        add(jButton8);
+        jButton8.setText("+");
+        jButton8.setFont(new Font("Arial",Font.HANGING_BASELINE, 40));
+        jButton8.setForeground(new Color(0, 0, 0));
+        jButton8.setBackground(new Color(90, 90, 138));
+        jButton8.setBounds(215,160,100,55);
     }
 }
