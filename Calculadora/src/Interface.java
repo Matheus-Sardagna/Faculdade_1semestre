@@ -90,4 +90,5 @@ public class Interface extends JFrame {
         jButton8.setBackground(new Color(90, 90, 138));
         jButton8.setBounds(215,160,100,55);
     }
+    // não consegui fazer nada hj perdão a mim msm
 }
