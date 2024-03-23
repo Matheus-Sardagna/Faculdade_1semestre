@@ -8,6 +8,7 @@ public class Main {
         gato.idade = Integer.parseInt(JOptionPane.showInputDialog(null,"Escreva a idade do gato: "));
         gato.raca = JOptionPane.showInputDialog(null,"Escreva a raca do gato: ");
 
+        gato.alterarNome(gato.nome);
         gato.comer();
         gato.miar();
         gato.idadeHumana();

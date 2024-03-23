@@ -3,12 +3,14 @@ import java.util.ArrayList;
 public class Livraria {
     private ArrayList<Livro> livros = new ArrayList<>();
 
+
 //    public Livraria() {
 //        livros = new ArrayList<>();
 //   }
 
-    public void adcionarLivros(Livro livro) {
-        livros.add(livro);
+    public void adcionarLivros(String titulo, String autor, int qtdPaginas, String genero ) {
+        Livro novoLivro = new Livro(titulo, autor,qtdPaginas, genero);
+        livros.add(novoLivro);
     }
 
     public void removerLivros(String titulo) {

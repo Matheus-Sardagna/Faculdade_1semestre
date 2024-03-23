@@ -1,6 +1,8 @@
 import javax.swing.*;
+import java.util.Scanner;
 
 public class Gato {
+    public Scanner scanner = new Scanner(System.in);
     String nome;
     int idade;
     String raca;
@@ -19,6 +21,14 @@ public class Gato {
             }
 
     }
+
+    public void alterarNome(String novoNome) {
+        System.out.println("Escreva um novo nome para o gato: ");
+        novoNome = scanner.nextLine();
+        this.nome = novoNome;
+
+    }
+
 
     public void comer() {
         int comendo = Integer.parseInt(JOptionPane.showInputDialog(null,"Escreva: \n(1) se ele estiver miando, \n(2) se ele não estiver miando: "));
