@@ -22,34 +22,45 @@ public class Main {
                 System.out.println("Escreva o nome do aluno: ");
                 String nome = scanner.nextLine();
 
+                scanner.nextLine();
                 System.out.println("Escreva a idade do aluno: ");
                 int idade = scanner.nextInt();
 
-                aluno.setNome(nome);
-                aluno.setIdade(idade);
+                aluno = new Aluno(nome,idade);
+
+
 
             } else if (opcao == 2) {
                 System.out.println("Escreva o nome do professor: ");
                 String nome = scanner.nextLine();
 
+                scanner.nextLine();
                 System.out.println("Escreva a idade do professor: ");
                 int idade = scanner.nextInt();
 
-                professor.setNome(nome);
-                professor.setIdade(idade);
+                professor = new Professor(nome,idade);
 
             } else if (opcao == 3) {
                 System.out.println("Escreva o nome do professor: ");
                 String nome = scanner.nextLine();
 
-
-                disciplina.setNome(nome);
+                disciplina.adicionarDisciplina();
 
 
             } else if (opcao == 4) {
+                System.out.println("Escreva o nome da disciplina: ");
+                String nomeDisciplina = scanner.nextLine();
 
+                System.out.println("Escreva o nome do aluno: ");
+                String nomeAluno = scanner.nextLine();
 
-
+                // Verificando se a disciplina existe e se o aluno foi instanciado
+                if (disciplina.getNome() != null && aluno.getNome() != null) {
+                    disciplina.adicionarAluno(aluno);
+                    System.out.println("Aluno " + aluno.getNome() + " adicionado à disciplina " + disciplina.getNome());
+                } else {
+                    System.out.println("Disciplina ou aluno não foram corretamente cadastrados.");
+                }
             }
         }
     }
