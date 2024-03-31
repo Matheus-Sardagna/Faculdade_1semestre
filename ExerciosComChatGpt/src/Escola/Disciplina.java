@@ -12,10 +12,11 @@ public class Disciplina {
     public Disciplina(String nome, Professor professor) {
         this.nome = nome;
         this.professor = professor;
-        this.alunosDisciplina = new ArrayList<>();
     }
 
-    public void adicionarDisciplina(Disciplina disciplina) {
+
+    public void adicionarDisciplina(String nome, Professor professor) {
+        Disciplina disciplina = new Disciplina(nome,professor);
         disciplinas.add(disciplina);
         System.out.println("Adicionou Disciplina!");
     }
@@ -63,4 +64,6 @@ public class Disciplina {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+
 }

@@ -15,7 +15,7 @@ public class Main {
                     "(2) Contratar Professor\n" +
                     "(3) Cadatrar Disciplina\n" +
                     "(4) Adicionar Aluno na disciplina\n" +
-                    "(0) Sair" +
+                    "(0) Sair\n" +
                     "Escolha uma opção: ");
             int opcao = scanner.nextInt();
             if (opcao == 1) {
@@ -41,16 +41,20 @@ public class Main {
                 professor = new Professor(nome,idade);
 
             } else if (opcao == 3) {
-                System.out.println("Escreva o nome do professor: ");
+                System.out.println("Escreva o nome da disciplina: ");
                 String nome = scanner.nextLine();
-
-                disciplina.adicionarDisciplina();
+                scanner.nextLine();
+                System.out.println("Escreva o nome do professor da disciplina: ");
+                String nomeProfessor = scanner.nextLine();
+                // Supondo que você tenha uma instância de Professor chamada professor
+                disciplina = new Disciplina(nome, professor);
 
 
             } else if (opcao == 4) {
                 System.out.println("Escreva o nome da disciplina: ");
                 String nomeDisciplina = scanner.nextLine();
 
+                scanner.nextLine();
                 System.out.println("Escreva o nome do aluno: ");
                 String nomeAluno = scanner.nextLine();
 
