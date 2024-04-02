@@ -13,8 +13,8 @@ public class Main {
             System.out.println("(1) Adicionar Livro ");
             System.out.println("(2) Remover Livro");
             System.out.println("(3) Buscar livro");
-            System.out.println("(4) Para sair"); // 5 para sair -->  amanha vou tentar
-//      System.out.println("(4) Editar livro");  --> Irei fazer amanha pois nao tenho tempo hj :(
+            System.out.println("(4) Editar livro");
+            System.out.println("(5) Para sair");
             System.out.println("Escreva sua opção: ");
             opcao = scanner.nextInt();
 
@@ -61,9 +61,18 @@ public class Main {
                     }
                     break;
 
+
                 case 4:
+                    System.out.println("Qual livro você quer editar?: ");
+                    String titulo2 = scanner.nextLine();
+                    scanner.nextLine();
+                    livraria.editarLivro(titulo2);
+
+                    break;
+
+                case 5:
                     System.out.println("vazando");
-                    return;
+                    break;
                 default:
                     System.out.println("Opçao errada");
             }
