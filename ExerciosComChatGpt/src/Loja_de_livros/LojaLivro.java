@@ -41,7 +41,7 @@ public class LojaLivro {
     }
 
     public void listarLivro() {
-        System.out.println("Livros disponíveis na loja:");
+        System.out.println("Livros disponíveis na loja: \n");
         for (Livro livro : livros) {
             System.out.println(livro.getTitulo());
         }
