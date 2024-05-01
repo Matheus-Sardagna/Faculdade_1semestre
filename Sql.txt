@@ -1,0 +1,42 @@
+CREATE TABLE paciente(
+  id INTEGER not NULL PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100) not NULL,
+  idade INTEGER NOT NULL,
+  doenca VARCHAR(200) NOT NULL,
+  altura FLOAT(200) NOT NULL,
+  peso FLOAT(1000) not NULL
+)
+
+CREATE TABLE medico(
+  id INTEGER not NULL PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100) not NULL,
+  idade INTEGER(200) NOT NULL,
+  plantao DATA NOT NULL,
+  especializacao varchar(200) NOT NULL,
+  caraga_horaria FLOAT(100) not NULL
+)
+
+CREATE TABLE departamento (
+  id INTEGER not NULL PRIMARY key AUTOINCREMENT,
+  tipo varchar(200) not null,
+  localidade varchar(300) not NULL,
+  profissional INTEGER NOT null,
+  equipamentos VARCHAR(200) NOT null,
+  quantidade INTEGER NOT null,
+  foreign key (profissional) references medico(id)
+)
+
+CREATE TABLE consulta (
+  id INTEGER not NULL PRIMARY key AUTOINCREMENT,
+  horario data not null,
+  profissional INTEGER not NULL,
+  paciente INTEGER NOT NULL,
+  departamento INTEGER not NULL,
+  motivo varchar(300) NOT NULL,
+  foreign key (profissional) REFERENCES medico(id),
+  FOREIGN KEY (paciente) REFERENCES paciente(id),
+  FOREIGN KEY (departamento) REFERENCES departamento(id)
+)
+
+INSERT INTO paciente(nome,idade,altura,peso,doenca) VALUES('nome',22,2,24,'lepra')
+SELECT * FROM paciente
