@@ -16,7 +16,6 @@ public class LojaLivro {
     public void adicionarLivros(Livro  livro ) {
         livros.add(livro);
         System.out.println("Livro adicionado " + livro.getTitulo());
-
     }
 
     public void adicionarCliente(Cliente cliente) {
