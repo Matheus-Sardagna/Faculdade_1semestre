@@ -7,34 +7,65 @@ public class ListaTarefa {
     private String nomeTarefa;
     private String dataTarefa;
     private boolean status;
-    private ArrayList< ListaTarefa> tarefas = new ArrayList<>();
+    private ArrayList<ListaTarefa> tarefas = new ArrayList<>();
 
     public ListaTarefa(String nomeTarefa, String dataTarefa, boolean status) {
         this.nomeTarefa = nomeTarefa;
         this.dataTarefa = dataTarefa;
         this.status = status;
+
     }
 
-//    public void adicionarTarefa(String nomeTarefa, String dataTarefa, boolean status) {
-//        tarefas.add(new ListaTarefa(nomeTarefa, dataTarefa, status));
-//    } amanha termino
-
+  public void adicionarTarefa(String nomeTarefa, String dataTarefa, boolean status) {
+        ListaTarefa tarefa = new ListaTarefa(nomeTarefa, dataTarefa, status);
+        tarefas.add(tarefa);
+   }
 
     public void listarTarefa() {
-        if (isStatus()) {
-            JOptionPane.showMessageDialog(null,"NOME: " +
-                    getNomeTarefa() +
-                    "\nDATA :" +
-                    getDataTarefa()+
-                    "\nSTATUS: Tarefa feita");
-        }else {
-            JOptionPane.showMessageDialog(null,"NOME: " +
-                    getNomeTarefa() +
-                    "\nDATA :" +
-                    getDataTarefa()+
-                    "STATUS: Não foi feita");
+        if (tarefas != null) {
+            for (ListaTarefa tarefa : tarefas) {
+                if (tarefa.isStatus()) {
+                    JOptionPane.showMessageDialog(null,"NOME: " +
+                            tarefa.getNomeTarefa() +
+                            "\nDATA :" +
+                            tarefa.getDataTarefa()+
+                            "\nSTATUS: Tarefa feita");
+                }else {
+                    JOptionPane.showMessageDialog(null,"NOME: " +
+                            tarefa.getNomeTarefa() +
+                            "\nDATA :" +
+                            tarefa.getDataTarefa()+
+                            "\nSTATUS: Não foi feita");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Não há tarefas para listar.");
         }
+    }
+    public void editarTarefa() {
+        if (tarefas != null) {
+            for (ListaTarefa tarefa : tarefas) {
+                String nomeTarefa = JOptionPane.showInputDialog(null, "Nome da tarefa");
+                if (tarefa.getNomeTarefa().equals(nomeTarefa)) {
+                    String dataTarefa = JOptionPane.showInputDialog(null, "Data da tarefa");
+                    boolean status = JOptionPane.showConfirmDialog(null, "Tarefa feita?", "Confirmação", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+                    tarefa.setDataTarefa(dataTarefa);
+                    tarefa.setStatus(status);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Não há tarefas para editar.");
+        }
+    }
 
+    public void deletarTarefa(String nomeTarefa) {
+        for (int i = 0; i < tarefas.size(); i++) {
+            ListaTarefa tarefa = tarefas.get(i);
+            if (tarefa.getNomeTarefa().equals(nomeTarefa)) {
+                tarefas.remove(tarefa);
+            }
+
+        }
     }
 
     public String getDataTarefa() {

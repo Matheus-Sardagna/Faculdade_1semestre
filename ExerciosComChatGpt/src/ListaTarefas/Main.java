@@ -12,6 +12,8 @@ public class Main {
             escolha = Integer.parseInt(showInputDialog(null, " ============Menu============ \n" +
                     " (1) Adicionar tarefa \n" +
                     " (2) Listar tarefa \n" +
+                    " (3) Deletar tarefa \n" +
+                    " (4) Editar tarefa \n" +
                     " (0) Sair "));
 
             switch (escolha) {
@@ -22,14 +24,29 @@ public class Main {
                     if (opcao == JOptionPane.YES_OPTION) {
                         boolean statusLista = true;
                         listaTarefa = new ListaTarefa(nome, data, statusLista);
+                        listaTarefa.adicionarTarefa(nome, data, statusLista);
                     } else {
                         boolean statusLista = false;
                         listaTarefa = new ListaTarefa(nome, data, statusLista);
+                        listaTarefa.adicionarTarefa(nome, data, statusLista);
                     }
                     System.out.println("Tarefa adicionada com sucesso!");
                     break;
                 case 2:
+                    assert listaTarefa != null;
                     listaTarefa.listarTarefa();
+
+                    break;
+                case 3:
+                    String nomeTarefa = JOptionPane.showInputDialog(null, "Qual o nome da tarefa que deseja remover? ");
+                    if (listaTarefa != null) {
+                        listaTarefa.deletarTarefa(nomeTarefa);
+                    }
+                    break;
+                case 4:
+                    if (listaTarefa != null) {
+                        listaTarefa.editarTarefa();
+                    }
                     break;
                 case 0:
                     System.out.println("Saindo do programa...");
